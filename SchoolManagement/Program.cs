@@ -2,10 +2,14 @@
 
 using System.Text;
 using SchoolManagement;
+//using SchoolManagement.DataLayer;
 
+//var teachers = new TeacherRepository().GetTeachers();
 var teacherManager = new TeacherManager();
 var courseManager = new CourseManager();
 var studentManager = new StudentManager();
+var roomManager = new RoomManager();
+var roomCalenderManager = new RoomCalenderManager();
 var csvManager = new CsvManager();
 
 
@@ -75,8 +79,10 @@ bool CheckCommand()
     Console.WriteLine("1 -> Define Teacher");
     Console.WriteLine("2 -> Define Course");
     Console.WriteLine("3 -> Define Student");
-    Console.WriteLine("4 -> Assign teacher to course");
-    Console.WriteLine("5 -> Assign course to student");
+    Console.WriteLine("4 -> Define Room");
+    Console.WriteLine("5 -> Assign teacher to course");
+    Console.WriteLine("6 -> Assign course to student");
+    Console.WriteLine("7 -> CalenderYour Course and Room and Date");
     Console.WriteLine("q -> Quit");
     var input = Console.ReadLine();
 
@@ -95,12 +101,19 @@ bool CheckCommand()
             studentManager.DefineNewStudent();
             studentManager.PrintStudents();
             break;
-            
         case "4":
+            roomManager.GetRoomFromUser();
+            roomManager.PrintRooms();
+            break;
+            
+        case "5":
             courseManager.AssignTeacherToCourse(teacherManager);
             break;
-        case "5":
+        case "6":
             studentManager.AssignCourseToStudent(courseManager);
+            break;
+        case "7":
+            roomCalenderManager.DefineGeneralCalender(roomManager, courseManager);
             break;
 
         case "q":

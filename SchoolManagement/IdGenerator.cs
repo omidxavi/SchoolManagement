@@ -64,3 +64,34 @@ public class IdGeneratorStudentCourse
         return i;
     }
 }
+public class IdGeneratorRoom
+{
+    private int i;
+
+    public IdGeneratorRoom(int start)
+    {
+        i = start;
+    }
+
+    public int  GenerateId()
+    {
+        i = i + 1;
+        return i;
+    }
+}
+
+public class IdGeneratorRoomsCalender
+{
+    private int i;
+
+    public IdGeneratorRoomsCalender(int start)
+    {
+        i = start;
+    }
+
+    public int  GenerateId()
+    {
+        i = i + 1;
+        return i;
+    }
+}

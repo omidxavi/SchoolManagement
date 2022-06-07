@@ -13,6 +13,9 @@ public class CsvManager
     private const string StudentCoursePath = "D:\\db\\student-course.csv";
     private const string CourseTeacherPath = "D:\\db\\course-teacher.csv";
     private const string CoursePath = "D:\\db\\Courses.csv";
+    private const string RoomPath = "D:\\db\\Rooms.csv";
+    private const string RoomCalenderPath = "D:\\db\\Roomscalender.csv";
+
 
     public List<Teacher> GetTeachers()
     {
@@ -79,7 +82,7 @@ public class CsvManager
 
         return null;
     }
-    
+
     public List<Course> GetCourses()
     {
         var Courses = new List<Course>();
@@ -241,7 +244,6 @@ public class CsvManager
         return studentCourses;
     }
 
-
     public void AddToStudentCourseFile(Student student, Course course)
     {
         var count = GetStudentCourses();
@@ -269,7 +271,7 @@ public class CsvManager
             File.AppendAllText(StudentCoursePath, csv.ToString());
         }
     }
-    
+
     public void UpdateCourseTeacher(int courseId, int teacherId)
     {
         var lines = File.ReadAllLines(CoursePath);
@@ -283,10 +285,114 @@ public class CsvManager
                 break;
             }
         }
+
         File.WriteAllLines(CoursePath, lines);
     }
 
+    public void AddToRoomsFile(Room room)
+    {
+        if (!File.Exists(RoomPath))
+        {
+            var csv = new StringBuilder();
+            csv.AppendLine("Id,Number");
+            var first = room.Id;
+            var second = room.Number;
+            var row = $"{first},{second}";
+            csv.AppendLine(row);
+            File.AppendAllText(RoomPath, csv.ToString());
+        }
+        else
+        {
+            var csv = new StringBuilder();
+            var first = room.Id;
+            var second = room.Number;
+            var row = $"{first},{second}";
+            csv.AppendLine(row);
+            File.AppendAllText(RoomPath, csv.ToString());
+        }
+    }
+    
+    public List<Room> GetRoom()
+    {
+        var rooms = new List<Room>();
+        if (!File.Exists(RoomPath))
+        {
+            return rooms;
+        }
 
+        var lines = File.ReadAllLines(RoomPath);
+        for (int i = 0; i < lines.Length; i++)
+        {
+            if (i == 0)
+            {
+                continue;
+            }
+
+            var line = lines[i];
+            var columns = line.Split(",");
+            var room = new Room(int.Parse(columns[0]), int.Parse(columns[1]));
+            rooms.Add(room);
+        }
+
+        return rooms;
+    }
+
+    public void AddToRoomCalenderFile(RoomsCalender roomsCalender)
+    {
+        if (!File.Exists(RoomCalenderPath))
+        {
+            var csv = new StringBuilder();
+            csv.AppendLine("Id,RoomId,CourseID,Day,Time");
+            var first = roomsCalender.Id;
+            var second = roomsCalender.RoomId;
+            var third = roomsCalender.CourseId;
+            var fourth = roomsCalender.Day;
+            var fifth = roomsCalender.Time;
+            var row = $"{first},{second},{third},{fourth},{fifth}";
+            csv.AppendLine(row);
+            File.AppendAllText(RoomCalenderPath, csv.ToString());
+        }
+        else
+        {
+            var csv = new StringBuilder();
+            var first = roomsCalender.Id;
+            var second = roomsCalender.RoomId;
+            var third = roomsCalender.CourseId;
+            var fourth = roomsCalender.Day;
+            var fifth = roomsCalender.Time;
+            var row = $"{first},{second},{third},{fourth},{fifth}";
+            csv.AppendLine(row);
+            File.AppendAllText(RoomCalenderPath, csv.ToString());
+        }
+    }
+
+    public List<RoomsCalender> GetRoomsCalender()
+    {
+        var roomsCalenders = new List<RoomsCalender>();
+        if (!File.Exists(RoomCalenderPath))
+        {
+            return roomsCalenders;
+        }
+
+        var lines = File.ReadAllLines(RoomCalenderPath);
+        for (int i = 0; i < lines.Length; i++)
+        {
+            if (i == 0)
+            {
+                continue;
+            }
+
+            var line = lines[i];
+            var columns = line.Split(",");
+            var roomsCalender = new RoomsCalender(int.Parse(columns[0]), int.Parse(columns[1]), int.Parse(columns[2]),
+                day: 0,0);
+            // Enum changed to int but in file we have string can not read...
+            roomsCalenders.Add(roomsCalender);
+        }
+
+        return roomsCalenders;
+    }
+    
     public List<CourseTeacher> GetCourseTeacher()
     {
         var courseTeachers = new List<CourseTeacher>();
@@ -322,7 +428,7 @@ public class CsvManager
 
         return courseTeachers;
     }
-    
+
     public void AddToCourseTeacherFile(Course course, Teacher teacher)
     {
         if (!File.Exists(CourseTeacherPath))
@@ -364,7 +470,7 @@ public class CsvManager
 
         return false;
     }
-    
+
     public void UpdateCourse(Course course)
     {
         var lines = File.ReadAllLines(CoursePath);
@@ -378,7 +484,7 @@ public class CsvManager
                 break;
             }
         }
+
         File.WriteAllLines(CoursePath, lines);
     }
-
 }
