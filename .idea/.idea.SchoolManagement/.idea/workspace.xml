@@ -4,9 +4,16 @@
     <projectFile>SchoolManagement/SchoolManagement.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8ee01cb-302e-43b1-9a36-467def8b8f9c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e8ee01cb-302e-43b1-9a36-467def8b8f9c" name="Changes" comment="1">
+      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomCalenderRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentCourseRelationRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/TeacherRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/TeacherRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomsCalender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Models/RoomsCalender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/TeacherManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/TeacherManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +31,19 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7a1ad32abaee44480b66c2c1fcee9628cca92a4cd272eced5781564201180/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b8c56d5b036f2a6fe79726c905c982bb3e77beec6526d3695d5daf1286da/SqlMapper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8413e1f035e77d2236986d4dfed859bb3c1277413dd52b6ad9965f99e7d76d0/OleDbConnectionString.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/32e4e74128fcb0b6549a919f416d3242ec214218e666652c3836dcc2f025a6/DbConnectionInternal.Shared.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a0ff846ebfa676cac20dcca3325d4e1eb712c96c34f65c3d84be46959e87/DbConnectionInternal.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -88,7 +104,8 @@
       <workItem from="1654670337245" duration="526000" />
       <workItem from="1654670915788" duration="546000" />
       <workItem from="1654671493134" duration="1368000" />
-      <workItem from="1654672959638" duration="2393000" />
+      <workItem from="1654672959638" duration="3897000" />
+      <workItem from="1654776199999" duration="9958000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654517202634</created>
@@ -125,7 +142,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654671645914</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1">
+      <created>1654675761842</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654675761842</updated>
+    </task>
+    <task id="LOCAL-00007" summary="1">
+      <created>1654675947239</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654675947239</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +195,8 @@
     <MESSAGE value="connection one class to access DB" />
     <MESSAGE value="finish step2 without repeat handling" />
     <MESSAGE value="delete file from access" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete file from access" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Channels;
 using System.IO;
+using SchoolManagement.DataLayer;
 
 
 namespace SchoolManagement;
@@ -9,12 +10,10 @@ namespace SchoolManagement;
 public class TeacherManager
 {
     private readonly List<Teacher> _teachers;
-    private readonly IdGeneratorTeacher idGenerator;
 
     public TeacherManager()
     {
-        _teachers = new CsvManager().GetTeachers();
-        idGenerator = new IdGeneratorTeacher(_teachers.Count);
+        _teachers = new TeacherRepository().GetTeachers();
     }
 
     
@@ -22,30 +21,24 @@ public class TeacherManager
     public Teacher DefineNewTeacher()
     {
         
-        var id = idGenerator.GenerateId();
         Console.WriteLine("Enter teacher name");
         var name = Console.ReadLine();
         Console.WriteLine("Enter teacher family");
         var family = Console.ReadLine();
         var teacher = new Teacher
         {
-            Id = id,
             Name = name,
             Family = family,
         };
+        var teacherRepository = new TeacherRepository();
+        teacherRepository.AddTeacher(teacher);
         print(teacher);
         AddToList(teacher);
-        AddTOExcel(teacher);
         
         return teacher;
     }
     
 
-    private void AddTOExcel(Teacher teacher)
-    {
-        CsvManager csvManager = new CsvManager();
-        csvManager.AddTeacherTOFile(teacher);
-    }
 
  
     private void print(Teacher teacher)
