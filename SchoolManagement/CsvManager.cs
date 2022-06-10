@@ -36,7 +36,7 @@ public class CsvManager
                 continue;
             var teacher = new Teacher()
             {
-                Id = int.Parse(columns[0]),
+                //Id = int.Parse(columns[0]),
                 Name = columns[1],
                 Family = columns[2]
             };
@@ -171,7 +171,7 @@ public class CsvManager
                 continue;
             }
 
-            var student = new Student(id: Int32.Parse(columns[0]), name: columns[1], family: columns[2]);
+            var student = new Student(name: columns[1], family: columns[2]);
             var courseIds = allStudentCourses.Where(sc => sc.StudentId == student.Id).Select(sc => sc.CourseId)
                 .ToList();
             var studentCourses = allCourses.Where(c => courseIds.Contains(c.Id)).ToList();
@@ -330,7 +330,7 @@ public class CsvManager
 
             var line = lines[i];
             var columns = line.Split(",");
-            var room = new Room(int.Parse(columns[0]), int.Parse(columns[1]));
+            var room = new Room(int.Parse(columns[1]));
             rooms.Add(room);
         }
 
@@ -384,7 +384,7 @@ public class CsvManager
 
             var line = lines[i];
             var columns = line.Split(",");
-            var roomsCalender = new RoomsCalender(int.Parse(columns[0]), int.Parse(columns[1]), int.Parse(columns[2]),
+            var roomsCalender = new RoomsCalender(int.Parse(columns[1]), int.Parse(columns[2]),
                 day: 0,0);
             // Enum changed to int but in file we have string can not read...
             roomsCalenders.Add(roomsCalender);

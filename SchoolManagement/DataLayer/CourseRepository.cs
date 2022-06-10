@@ -20,13 +20,13 @@ public class CourseRepository
     {
         //insert into Teacher (Name) values('Omid')
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Execute($"insert into Course (Name) values({course.Name})");
+        var result = connection.Execute($"insert into Course (Name) values('{course.Name}')");
     }
 
     public void UpdateCourses(Course course)
     {
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Execute($"insert into Course (NAME) values ({course.Name} ) where Id==({course.Id})");
+        var result = connection.Execute($"insert into Course (NAME) values ('{course.Name}' ) where Id==({course.Id})");
     }
 
     public void DeleteCourses(Course course)

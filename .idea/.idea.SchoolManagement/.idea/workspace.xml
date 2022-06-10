@@ -4,16 +4,24 @@
     <projectFile>SchoolManagement/SchoolManagement.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8ee01cb-302e-43b1-9a36-467def8b8f9c" name="Changes" comment="1">
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomCalenderRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentCourseRelationRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentRepository.cs" afterDir="false" />
+    <list default="true" id="e8ee01cb-302e-43b1-9a36-467def8b8f9c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/CsvManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/CsvManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomCalenderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomCalenderRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentCourseRelationRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentCourseRelationRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/TeacherRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/TeacherRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomsCalender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Models/RoomsCalender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/TeacherManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/TeacherManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/Models/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Models/Room.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/Models/RoomsCalender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Models/RoomsCalender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/Models/Student.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Models/Student.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/RoomManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/StudentManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/StudentManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +71,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="XThreadsFramesViewSplitterKey" value="0.41626793" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="RiderNuGetOptionsPageId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -105,7 +114,8 @@
       <workItem from="1654670915788" duration="546000" />
       <workItem from="1654671493134" duration="1368000" />
       <workItem from="1654672959638" duration="3897000" />
-      <workItem from="1654776199999" duration="9958000" />
+      <workItem from="1654776199999" duration="10278000" />
+      <workItem from="1654868820964" duration="6536000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654517202634</created>
@@ -156,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654675947239</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Compelete Datalayer">
+      <created>1654786742511</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654786742511</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +213,32 @@
     <MESSAGE value="finish step2 without repeat handling" />
     <MESSAGE value="delete file from access" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="Compelete Datalayer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Compelete Datalayer" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs</url>
+          <line>14</line>
+          <properties documentPath="C:\Projects\MyProjects\SchoolManagement\SchoolManagement\StudentCourseManager.cs" initialLine="14" containingFunctionPresentation="method 'AssignCourseToStudent'">
+            <startOffsets>
+              <option value="558" />
+            </startOffsets>
+            <endOffsets>
+              <option value="615" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#SchoolManagement.Student" memberName="Id" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

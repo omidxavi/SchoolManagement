@@ -1,6 +1,6 @@
 using System.Runtime.ExceptionServices;
 using System.Text;
-
+using SchoolManagement.DataLayer;
 
 
 namespace SchoolManagement;
@@ -9,41 +9,30 @@ public class CourseManager
 {
 
     private readonly List<Course> _courses;
-    private readonly IdGeneratorCourse idGenerator;
-
-
+    
     private const string CoursePath = "D:\\db\\Courses.csv";
 
     public CourseManager()
     {
         _courses =new CsvManager().GetCourses();
-        idGenerator = new IdGeneratorCourse(_courses.Count);
     }
-
-
-
+    
     public Course DefineNewCourse()
     {
-        var id = idGenerator.GenerateId();
         Console.WriteLine("Enter course name");
         var name = Console.ReadLine();
 
         var course = new Course
         {
-            Id = id,
             Name = name,
         };
-        // Print(course);
+        Print(course);
         AddToList(course);
-        AddToExcel(course);
+        var courseRepository = new CourseRepository();
+        courseRepository.AddCourses(course);
         return course;
     }
 
-    private void AddToExcel(Course course)
-    {
-        CsvManager csvManager = new CsvManager();
-        csvManager.AddCourseToFile(course);
-    }
 
     private void Print(Course course)
     {
@@ -77,19 +66,6 @@ public class CourseManager
         var csvManager = new CsvManager();
         csvManager.UpdateCourseTeacher(selectedCourse.Id, selectedTeacher.Id);
     }
-    
-    
-    public void UpdateCourse()
-    {
-        var lines = File.ReadAllLines(CoursePath);
-        for (int i = 0; i < lines.Length; i++)
-        {
-            var line = lines[i];
-            var columns = line.Split(",");
-        }
-        
-    }
-
     
     public Course SelectCourse()
     {

@@ -1,27 +1,26 @@
 using System.Runtime.InteropServices;
+using SchoolManagement.DataLayer;
 
 namespace SchoolManagement;
 
 public class RoomManager
 {
     private readonly List<Room> _rooms;
-    private readonly IdGeneratorRoom _idGeneratorRoom;
 
     public RoomManager()
     {
         _rooms = new CsvManager().GetRoom();
-        _idGeneratorRoom = new IdGeneratorRoom(_rooms.Count);
     }
 
     public Room GetRoomFromUser()
     {
-        var id = _idGeneratorRoom.GenerateId();
         Console.WriteLine("please Enter your room number");
         var number = int.Parse(Console.ReadLine());
-        var room = new Room(id: id, number: number);
+        var room = new Room(number: number);
         Print(room);
         AddToList(room);
-        AddToExcel(room);
+        var roomRepository = new RoomRepository();
+        roomRepository.AddRooms(room);
         return room;
     }
     
@@ -29,12 +28,6 @@ public class RoomManager
     private void Print(Room room)
     {
         Console.WriteLine($"{room.Id} : {room.Number } ");
-    }
-
-    private void AddToExcel(Room room)
-    {
-        CsvManager csvManager = new CsvManager();
-        csvManager.AddToRoomsFile(room);
     }
     
     public void AddToList(Room room)

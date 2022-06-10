@@ -10,6 +10,7 @@ var courseManager = new CourseManager();
 var studentManager = new StudentManager();
 var roomManager = new RoomManager();
 var roomCalenderManager = new RoomCalenderManager();
+var studentCourseManager = new StudentCourseManager();
 var csvManager = new CsvManager();
 
 
@@ -110,7 +111,8 @@ bool CheckCommand()
             courseManager.AssignTeacherToCourse(teacherManager);
             break;
         case "6":
-            studentManager.AssignCourseToStudent(courseManager);
+            studentCourseManager.AssignCourseToStudent(courseManager,studentManager);
+            
             break;
         case "7":
             roomCalenderManager.DefineGeneralCalender(roomManager, courseManager);

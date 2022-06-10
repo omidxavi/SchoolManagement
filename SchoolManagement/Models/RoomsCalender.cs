@@ -26,9 +26,8 @@ public class RoomsCalender
        forth
     }
     
-    public RoomsCalender(int id,int roomId,int courseId,int day,int time)
+    public RoomsCalender(int roomId,int courseId,int day,int time)
     {
-        Id = id;
         RoomId = roomId;
         CourseId =courseId;
         Day = (Days) day;

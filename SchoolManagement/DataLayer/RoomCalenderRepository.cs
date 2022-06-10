@@ -20,13 +20,13 @@ public class RoomsCalenderRepository
     {
         //insert into Teacher (Name) values('Omid')
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Execute($"insert into RoomsCalender (RoomId) values({roomsCalender.RoomId}),(CourseId) values ({roomsCalender.CourseId}) , (Day)values ({roomsCalender.Day}),(Time) values ({roomsCalender.Time})");
+        var result = connection.Execute($"insert into RoomsCalender (RoomId,CourseId,Day,Time) values('{roomsCalender.RoomId}','{roomsCalender.CourseId}'),'{roomsCalender.Day}','{roomsCalender.Time}')");
     }
 
     public void UpdateRoomsCalender(RoomsCalender roomsCalender)
     {
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Execute($"insert into RoomsCalender (RoomId) values({roomsCalender.RoomId}),(CourseId) values ({roomsCalender.CourseId}) , (Day)values ({roomsCalender.Day}),(Time) values ({roomsCalender.Time}) where Id==({roomsCalender.Id}))");
+        var result = connection.Execute($"insert into RoomsCalender (RoomId,CourseId,Day,Time) values('{roomsCalender.RoomId}','{roomsCalender.CourseId}'),'{roomsCalender.Day}','{roomsCalender.Time}') where Id==({roomsCalender.Id})");
     }
 
     public void DeleteRoomsCalender(RoomsCalender roomsCalender)
