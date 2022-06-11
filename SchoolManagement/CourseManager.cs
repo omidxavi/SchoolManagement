@@ -11,11 +11,7 @@ public class CourseManager
     private readonly List<Course> _courses;
     
     private const string CoursePath = "D:\\db\\Courses.csv";
-
-    public CourseManager()
-    {
-        _courses =new CsvManager().GetCourses();
-    }
+    
     
     public Course DefineNewCourse()
     {
@@ -39,7 +35,7 @@ public class CourseManager
         Console.WriteLine($"{course.Id} : {course.Name} ");
     }
 
-    public void PrintCourses()
+    /*public void PrintCourses()
     {
         Console.WriteLine("----------------courses------------------------");
         foreach (var course in _courses)
@@ -49,7 +45,7 @@ public class CourseManager
         }
 
         Console.WriteLine("------------------------------------------------");
-    }
+    }*/
 
     public void AddToList(Course course)
     {
@@ -69,10 +65,12 @@ public class CourseManager
     
     public Course SelectCourse()
     {
+        var courseRepository = new CourseRepository();
+
         Console.WriteLine("Please select a course");
-        for (int i = 0; i < _courses.Count; i++)
+        for (int i = 0; i <courseRepository.GetCourses().Count ; i++)
         {
-            var course = _courses[i];
+            var course = courseRepository.GetCourses()[i];
             Console.WriteLine($"{i + 1} -> {course.Name}");
         }
 

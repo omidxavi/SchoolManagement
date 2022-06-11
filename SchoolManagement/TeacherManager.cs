@@ -43,7 +43,7 @@ public class TeacherManager
  
     private void print(Teacher teacher)
     {
-        Console.WriteLine($"{teacher.Id} : {teacher.Name} + {teacher.Family}  and age is : {teacher.Age}");
+        Console.WriteLine($"{teacher.Id} : {teacher.Name} + {teacher.Family} ");
     }
 
     public void PrintTeachers()

@@ -12,7 +12,6 @@ public class TeacherRepository
     {
         using var connection = new OdbcConnection(ConnectionString);
         var result = connection.Query<Teacher>("select Id, Name,Family from Teacher").ToList();
-
         return result;
     }
 

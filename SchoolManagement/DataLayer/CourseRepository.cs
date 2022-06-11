@@ -11,7 +11,7 @@ public class CourseRepository
     public List<Course> GetCourses()
     {
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Query<Course>("select Id, Name, from Course").ToList();
+        var result = connection.Query<Course>("select  Name from Course").ToList();
 
         return result;
     }

@@ -19,8 +19,8 @@ public class StudentCourseRepository
     public void AddStudentCourses(StudentCourse studentCourse)
     {
         //insert into Teacher (Name) values('Omid')
-        using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Execute($"insert into StudentCourse (StudentId,CourseId) values('{studentCourse.StudentId}','{studentCourse.CourseId}')");
+        using var connection = new OdbcConnection(ConnectionString); 
+        connection.Execute($"insert into StudentCourse (StudentId,CourseId) values('{studentCourse.StudentId}','{studentCourse.CourseId}')");
     }
 
     public void UpdateStudentCourses(StudentCourse studentCourse)

@@ -5,23 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8ee01cb-302e-43b1-9a36-467def8b8f9c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/CsvManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/CsvManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomCalenderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomCalenderRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentCourseRelationRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentCourseRelationRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/TeacherRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/TeacherRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/Models/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Models/Room.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/Models/RoomsCalender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Models/RoomsCalender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/Models/Student.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Models/Student.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/RoomManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/StudentManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/StudentManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/TeacherManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/TeacherManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +43,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7a1ad32abaee44480b66c2c1fcee9628cca92a4cd272eced5781564201180/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b8c56d5b036f2a6fe79726c905c982bb3e77beec6526d3695d5daf1286da/SqlMapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ad457575d35dcbff26c9a5e3fb1d92f1d3c55f25ef6ebf475367b5d8/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8413e1f035e77d2236986d4dfed859bb3c1277413dd52b6ad9965f99e7d76d0/OleDbConnectionString.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/32e4e74128fcb0b6549a919f416d3242ec214218e666652c3836dcc2f025a6/DbConnectionInternal.Shared.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18d77481fd1e811df2e8477f8dc11b1a2f94d82a1f1c82502d4f99932f3c7947/System.Data.Odbc.notsupported.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a0ff846ebfa676cac20dcca3325d4e1eb712c96c34f65c3d84be46959e87/DbConnectionInternal.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -115,7 +110,10 @@
       <workItem from="1654671493134" duration="1368000" />
       <workItem from="1654672959638" duration="3897000" />
       <workItem from="1654776199999" duration="10278000" />
-      <workItem from="1654868820964" duration="6536000" />
+      <workItem from="1654868820964" duration="6625000" />
+      <workItem from="1654923615955" duration="4396000" />
+      <workItem from="1654928699274" duration="2976000" />
+      <workItem from="1654931772789" duration="8545000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654517202634</created>
@@ -173,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654786742511</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="solved write problem and need manage relations">
+      <created>1654877029597</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1654877029597</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,23 +219,37 @@
     <MESSAGE value="delete file from access" />
     <MESSAGE value="1" />
     <MESSAGE value="Compelete Datalayer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Compelete Datalayer" />
+    <MESSAGE value="solved write problem and need manage relations" />
+    <option name="LAST_COMMIT_MESSAGE" value="solved write problem and need manage relations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs</url>
-          <line>14</line>
-          <properties documentPath="C:\Projects\MyProjects\SchoolManagement\SchoolManagement\StudentCourseManager.cs" initialLine="14" containingFunctionPresentation="method 'AssignCourseToStudent'">
+          <url>file://$PROJECT_DIR$/SchoolManagement/DataLayer/TeacherRepository.cs</url>
+          <line>13</line>
+          <properties documentPath="C:\Projects\MyProjects\SchoolManagement\SchoolManagement\DataLayer\TeacherRepository.cs" initialLine="13" containingFunctionPresentation="method 'GetTeachers'">
             <startOffsets>
-              <option value="558" />
+              <option value="369" />
             </startOffsets>
             <endOffsets>
-              <option value="615" />
+              <option value="456" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SchoolManagement/DataLayer/StudentRepository.cs</url>
+          <line>13</line>
+          <properties documentPath="C:\Projects\MyProjects\SchoolManagement\SchoolManagement\DataLayer\StudentRepository.cs" initialLine="13" containingFunctionPresentation="method 'GetStudents'">
+            <startOffsets>
+              <option value="369" />
+            </startOffsets>
+            <endOffsets>
+              <option value="453" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

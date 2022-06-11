@@ -8,7 +8,6 @@ public class StudentManager
 {
     private readonly List<Student> _students;
     
-    
     public Student DefineNewStudent()
     {
         Console.WriteLine("Enter student name");
@@ -31,16 +30,18 @@ public class StudentManager
         Console.WriteLine($"{student.Id} : {student.Name } + {student.Family} ");
     }
 
-    public void PrintStudents()
+    /*public void PrintStudents()
     {
+        var studentRepository = new StudentRepository();
+
         Console.WriteLine("-------Students--------------------------");
-        foreach (var student in _students)
+        foreach (var student in studentRepository.GetStudents())
         {
             Print(student);
             Console.WriteLine("**************************");
         }    
         Console.WriteLine("-----------------------------------------");
-    }
+    }*/
     
     public void AddToList(Student student)
     {
@@ -63,12 +64,14 @@ public class StudentManager
         Console.WriteLine("select your student");
         for (int i = 0; i <studentRepository.GetStudents().Count ; i++)
         {
-
+            var student = studentRepository.GetStudents()[i];
+            Console.WriteLine($"{i+1} =>: {student.Name} , {student.Family}");
         }
 
         var input = Console.ReadLine();
         var selectIndex = int.Parse(input);
         var selectStudent = studentRepository.GetStudents()[selectIndex - 1];
+        Console.WriteLine($"You selected {selectStudent.Family}");
         return selectStudent;
     }
 }
