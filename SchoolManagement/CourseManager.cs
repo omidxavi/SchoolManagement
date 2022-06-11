@@ -76,7 +76,7 @@ public class CourseManager
 
         var input = Console.ReadLine();
         var selectedIndex = int.Parse(input);
-        var selectCourse = _courses[selectedIndex - 1];
+        var selectCourse = courseRepository.GetCourses()[selectedIndex - 1];
         Console.WriteLine($"You selected {selectCourse.Name}");
         return selectCourse;
     }
