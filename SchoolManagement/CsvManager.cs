@@ -171,7 +171,11 @@ public class CsvManager
                 continue;
             }
 
-            var student = new Student(name: columns[1], family: columns[2]);
+            var student = new Student()
+            {
+                Name = columns[0],
+                Family = columns[1]
+            };
             var courseIds = allStudentCourses.Where(sc => sc.StudentId == student.Id).Select(sc => sc.CourseId)
                 .ToList();
             var studentCourses = allCourses.Where(c => courseIds.Contains(c.Id)).ToList();

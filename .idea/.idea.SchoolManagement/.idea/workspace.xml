@@ -7,6 +7,15 @@
     <list default="true" id="e8ee01cb-302e-43b1-9a36-467def8b8f9c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/CsvManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/CsvManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomCalenderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomCalenderRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/Models/Student.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Models/Student.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/StudentManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/StudentManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/TeacherManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/TeacherManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +116,9 @@
       <workItem from="1654923615955" duration="4396000" />
       <workItem from="1654928699274" duration="2976000" />
       <workItem from="1654931772789" duration="8593000" />
-      <workItem from="1654972137141" duration="848000" />
+      <workItem from="1654972137141" duration="903000" />
+      <workItem from="1655008336923" duration="666000" />
+      <workItem from="1655009336616" duration="7266000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654517202634</created>
@@ -179,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654953674419</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed Course Model">
+      <created>1654973018275</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1654973018275</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +240,8 @@
     <MESSAGE value="Compelete Datalayer" />
     <MESSAGE value="solved write problem and need manage relations" />
     <MESSAGE value="Fixed Read Problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Read Problem" />
+    <MESSAGE value="Fixed Course Model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Course Model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -235,7 +254,7 @@
               <option value="369" />
             </startOffsets>
             <endOffsets>
-              <option value="453" />
+              <option value="456" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="9" />

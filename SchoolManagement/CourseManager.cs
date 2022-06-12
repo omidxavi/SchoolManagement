@@ -62,6 +62,21 @@ public class CourseManager
         var csvManager = new CsvManager();
         csvManager.UpdateCourseTeacher(selectedCourse.Id, selectedTeacher.Id);
     }
+
+    public void AssignTeachersToCourses(TeacherManager teacherManager)
+    {
+        var selectedCourse = SelectCourse();
+        var selectedTeacher = teacherManager.selectedTeacher();
+        var courseRepository = new CourseRepository();
+        selectedCourse.TeacherId = selectedTeacher.Id;
+        var course = new Course()
+        {
+            Name = selectedCourse.Name,
+            TeacherId = selectedCourse.TeacherId
+        };
+        courseRepository.UpdateCourses(course);
+
+    }
     
     public Course SelectCourse()
     {

@@ -11,7 +11,7 @@ public class CourseRepository
     public List<Course> GetCourses()
     {
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Query<Course>("select  Name from Course").ToList();
+        var result = connection.Query<Course>("select  Id,Name from Course").ToList();
 
         return result;
     }
@@ -26,12 +26,12 @@ public class CourseRepository
     public void UpdateCourses(Course course)
     {
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Execute($"insert into Course (NAME) values ('{course.Name}' ) where Id==({course.Id})");
+        var result = connection.Execute($"insert into Course (Name,TeacherId) values ('{course.Name}','{course.TeacherId}')");
     }
 
     public void DeleteCourses(Course course)
     {
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Execute($"delete from Course where Id==({course.Id})");
+        var result = connection.Execute($"delete from Course where Id=({course.Id})");
     }
 }

@@ -22,7 +22,7 @@ public class RoomCalenderManager
         var roomsCalender = new RoomsCalender(roomId, courseId, day,time);
         Print(roomsCalender);
         AddToList(roomsCalender);
-        var roomsCalenderRepository = new RoomsCalenderRepository();
+        var roomsCalenderRepository = new RoomsCalenderRepository{};
         roomsCalenderRepository.AddRoomsCalender(roomsCalender);
         return roomsCalender;
     }

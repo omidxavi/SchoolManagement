@@ -11,7 +11,7 @@ public class StudentRepository
     public List<Student> GetStudents()
     {
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Query<Student>("select  Name,Family from Student").ToList();
+        var result = connection.Query<Student>("select  Id,Name,Family from Student").ToList();
         return result;
     }
 

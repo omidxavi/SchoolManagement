@@ -10,14 +10,8 @@ namespace SchoolManagement;
 public class TeacherManager
 {
     private readonly List<Teacher> _teachers;
-
-    public TeacherManager()
-    {
-        _teachers = new TeacherRepository().GetTeachers();
-    }
-
     
-
+    
     public Teacher DefineNewTeacher()
     {
         
@@ -46,7 +40,7 @@ public class TeacherManager
         Console.WriteLine($"{teacher.Id} : {teacher.Name} + {teacher.Family} ");
     }
 
-    public void PrintTeachers()
+    /*public void PrintTeachers()
     {
         Console.WriteLine("-----------------------Teachers------------------------");
         foreach (var teacher in _teachers )
@@ -54,7 +48,7 @@ public class TeacherManager
             print(teacher);
             Console.WriteLine("*******************************************");
         }
-    }
+    }*/
      
 
     public void AddToList(Teacher teacher)
@@ -65,15 +59,16 @@ public class TeacherManager
     public Teacher selectedTeacher()
     {
         Console.WriteLine("please select a teacher");
-        for (int i = 0; i < _teachers.Count; i++)
+        var teacherRepository = new TeacherRepository();
+        for (int i = 0; i <teacherRepository.GetTeachers().Count ; i++)
         {
-            var teacher = _teachers[i];
+            var teacher = teacherRepository.GetTeachers()[i];
             Console.WriteLine($"{i+1} -> {teacher.Name} , {teacher.Family}");
         }
 
         var input = Console.ReadLine();
         var selectedIndex = int.Parse(input);
-        var selectedTeacher = _teachers[selectedIndex - 1];
+        var selectedTeacher = teacherRepository.GetTeachers()[selectedIndex - 1];
         Console.WriteLine($"you selected {selectedTeacher.Name},{selectedTeacher.Family}");
         return selectedTeacher;
     }

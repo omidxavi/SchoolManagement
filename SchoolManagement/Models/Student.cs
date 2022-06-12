@@ -10,12 +10,13 @@ public class Student
     public List<Course> Courses;
 
 
-    public Student(string name, string family)
+    /*public Student(int id,string name, string family)
     {
+        Id = id;
         Name = name;
         Family = family;
         Courses = new List<Course>();
-    }
+    }*/
 
     public void AssignCourse(Course course)
     {

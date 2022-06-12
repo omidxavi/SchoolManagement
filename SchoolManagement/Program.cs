@@ -11,7 +11,6 @@ var studentManager = new StudentManager();
 var roomManager = new RoomManager();
 var roomCalenderManager = new RoomCalenderManager();
 var studentCourseManager = new StudentCourseManager();
-var csvManager = new CsvManager();
 
 
 
@@ -19,7 +18,7 @@ var stop = false;
 
 //Seed();
 //studentManager.PrintStudents();
-teacherManager.PrintTeachers();
+//teacherManager.PrintTeachers();
 //courseManager.PrintCourses();
 
 while (!stop)
@@ -47,7 +46,7 @@ while (!stop)
         {
             case "1":
                 teacherManager.DefineNewTeacher();
-                teacherManager.PrintTeachers();
+                //teacherManager.PrintTeachers();
                 break;
             case "2":
                 courseManager.DefineNewCourse();
@@ -64,7 +63,7 @@ while (!stop)
                 break;
 
             case "5":
-                courseManager.AssignTeacherToCourse(teacherManager);
+                courseManager.AssignTeachersToCourses(teacherManager);
                 break;
             case "6":
                 studentCourseManager.AssignCourseToStudent(studentManager,courseManager);

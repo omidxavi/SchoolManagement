@@ -14,7 +14,11 @@ public class StudentManager
         var name = Console.ReadLine();
         Console.WriteLine("Enter student family");
         var family = Console.ReadLine();
-        var student = new Student(name: name, family: family);
+        var student = new Student()
+        {
+            Name = name,
+            Family = family
+        };
 
         Print(student);
         AddToList(student);
