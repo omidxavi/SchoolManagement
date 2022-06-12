@@ -19,10 +19,16 @@ public class RoomCalenderManager
         var day = int.Parse(Console.ReadLine());
         Console.WriteLine("chose your time '0=>8:10 , 1=>10:12 , 2=>13:15 , 3=>15:17' ");
         var time =int.Parse(Console.ReadLine()) ;
-        var roomsCalender = new RoomsCalender(roomId, courseId, day,time);
+        var roomsCalender = new RoomsCalender()
+        {
+            RoomId = roomId,
+            CourseId = courseId,
+            Day = (RoomsCalender.Days) day,  
+            Time = (RoomsCalender.Times) time
+        };
         Print(roomsCalender);
         AddToList(roomsCalender);
-        var roomsCalenderRepository = new RoomsCalenderRepository{};
+        var roomsCalenderRepository = new RoomsCalenderRepository();
         roomsCalenderRepository.AddRoomsCalender(roomsCalender);
         return roomsCalender;
     }

@@ -25,7 +25,7 @@ public class StudentRepository
     public void UpdateStudents(Student student)
     {
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Execute($"insert into Student (Name,Family) values('{student.Name}','{student.Family}') where Id==({student.Id})");
+        var result = connection.Execute($"insert into Student (Name,Family) values({student.Name},{student.Family}) where Id==({student.Id})");
     }
 
     public void DeleteStudents(Student student)

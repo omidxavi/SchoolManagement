@@ -13,6 +13,7 @@ public class StudentCourseManager
             StudentId = selectedStudent.Id,
             CourseId = selectedCourse.Id
         };
+        
         var studentCourseRepository = new StudentCourseRepository();
         studentCourseRepository.AddStudentCourses(studentCourse);
     }

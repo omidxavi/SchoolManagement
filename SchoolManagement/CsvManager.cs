@@ -388,8 +388,7 @@ public class CsvManager
 
             var line = lines[i];
             var columns = line.Split(",");
-            var roomsCalender = new RoomsCalender(int.Parse(columns[1]), int.Parse(columns[2]),
-                day: 0,0);
+            var roomsCalender = new RoomsCalender();
             // Enum changed to int but in file we have string can not read...
             roomsCalenders.Add(roomsCalender);
         }

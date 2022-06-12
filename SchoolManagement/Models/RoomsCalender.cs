@@ -26,13 +26,13 @@ public class RoomsCalender
        forth
     }
     
-    public RoomsCalender(int roomId,int courseId,int day,int time)
+   /* public RoomsCalender(int roomId,int courseId,int day,int time)
     {
         RoomId = roomId;
         CourseId =courseId;
         Day = (Days) day;
         Time = (Times) time;
-    }
+    }*/
     
     
     
