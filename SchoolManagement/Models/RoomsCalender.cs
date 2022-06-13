@@ -45,7 +45,7 @@ public class RoomsCalender
     public void AssignRoom(Room room)
     {
         RoomId=room.Id;
-        Console.WriteLine($"Room {room.Number} assigned to {RoomId}Room");
+        Console.WriteLine($"Room {room.RoomsNumber} assigned to {RoomId}Room");
     }
     
 

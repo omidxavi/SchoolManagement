@@ -10,6 +10,11 @@ namespace SchoolManagement;
 public class TeacherManager
 {
     private readonly List<Teacher> _teachers;
+
+    public TeacherManager()
+    {
+        _teachers = new List<Teacher>();
+    }
     
     
     public Teacher DefineNewTeacher()
@@ -24,11 +29,25 @@ public class TeacherManager
             Name = name,
             Family = family,
         };
-        var teacherRepository = new TeacherRepository();
-        teacherRepository.AddTeacher(teacher);
         print(teacher);
         AddToList(teacher);
-        
+        var teacherRepository = new TeacherRepository();
+        try
+        {
+            var isExist = teacherRepository.GetTeachers().Exists(x => x.Family == family);
+
+            if (!isExist)
+            {
+                teacherRepository.AddTeacher(teacher);
+                Console.WriteLine("your course added...");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+
         return teacher;
     }
     
@@ -54,7 +73,6 @@ public class TeacherManager
     public void AddToList(Teacher teacher)
     {
         _teachers.Add(teacher);
-        
     }
     public Teacher selectedTeacher()
     {

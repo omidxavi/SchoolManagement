@@ -6,17 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="e8ee01cb-302e-43b1-9a36-467def8b8f9c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/CsvManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/CsvManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomCalenderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomCalenderRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentCourseRelationRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentCourseRelationRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentCourseRelationRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentCourseRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/TeacherRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/TeacherRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/Models/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Models/Room.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/Models/RoomsCalender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Models/RoomsCalender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/RoomManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/StudentManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/StudentManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/TeacherManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/TeacherManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,17 +43,19 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7a1ad32abaee44480b66c2c1fcee9628cca92a4cd272eced5781564201180/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b8c56d5b036f2a6fe79726c905c982bb3e77beec6526d3695d5daf1286da/SqlMapper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ad457575d35dcbff26c9a5e3fb1d92f1d3c55f25ef6ebf475367b5d8/List.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8413e1f035e77d2236986d4dfed859bb3c1277413dd52b6ad9965f99e7d76d0/OleDbConnectionString.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/32e4e74128fcb0b6549a919f416d3242ec214218e666652c3836dcc2f025a6/DbConnectionInternal.Shared.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fd24584d19b30e71661e6cf1e2b72e725ac87c09096b9fcbf5f344bff357d/DefaultInterpolatedStringHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3c9fcf3545eeb2ff2cba80c87da4cb5bea1b7831bfa68e51e6d585b8a6688cf/Contains.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7a1ad32abaee44480b66c2c1fcee9628cca92a4cd272eced5781564201180/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ad457575d35dcbff26c9a5e3fb1d92f1d3c55f25ef6ebf475367b5d8/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8413e1f035e77d2236986d4dfed859bb3c1277413dd52b6ad9965f99e7d76d0/OleDbConnectionString.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/981d65c7fbe528a515db85bcbb92fe19ea3641e6ccd184df299fbba0eff72630/AnyAll.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18d77481fd1e811df2e8477f8dc11b1a2f94d82a1f1c82502d4f99932f3c7947/System.Data.Odbc.notsupported.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/df71358f7b7337a1eee3a65abe6d678dd9a065e256b8cc3fd44a2949754/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/992277cdfee51f288c33a1178fdf15f722dfc3e96a1152f98f6c3a111f9/Span.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a0ff846ebfa676cac20dcca3325d4e1eb712c96c34f65c3d84be46959e87/DbConnectionInternal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -122,7 +124,11 @@
       <workItem from="1654972137141" duration="903000" />
       <workItem from="1655008336923" duration="666000" />
       <workItem from="1655009336616" duration="7327000" />
-      <workItem from="1655027877413" duration="8352000" />
+      <workItem from="1655027877413" duration="8438000" />
+      <workItem from="1655094424868" duration="1041000" />
+      <workItem from="1655095681026" duration="3474000" />
+      <workItem from="1655099217242" duration="12705000" />
+      <workItem from="1655115875848" duration="11897000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654517202634</created>
@@ -208,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655027783338</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="stable version needs to handel repeat problem">
+      <created>1655036808631</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1655036808631</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +266,8 @@
     <MESSAGE value="Fixed Read Problem" />
     <MESSAGE value="Fixed Course Model" />
     <MESSAGE value="Handel and Managed Relations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Handel and Managed Relations" />
+    <MESSAGE value="stable version needs to handel repeat problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="stable version needs to handel repeat problem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -296,6 +310,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SchoolManagement/CourseManager.cs</url>
+          <line>75</line>
+          <properties documentPath="C:\Projects\MyProjects\SchoolManagement\SchoolManagement\CourseManager.cs" initialLine="68" containingFunctionPresentation="method 'AddToList'">
+            <startOffsets>
+              <option value="1651" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1672" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs</url>
+          <line>34</line>
+          <properties documentPath="C:\Projects\MyProjects\SchoolManagement\SchoolManagement\DataLayer\CourseRepository.cs" initialLine="34" containingFunctionPresentation="method 'DeleteCourses'">
+            <startOffsets>
+              <option value="1112" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1227" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints">
           <properties exception="System.ArgumentOutOfRangeException" isInternal="false" displayValue="ArgumentOutOfRangeException" namespaceName="System">

@@ -300,7 +300,7 @@ public class CsvManager
             var csv = new StringBuilder();
             csv.AppendLine("Id,Number");
             var first = room.Id;
-            var second = room.Number;
+            var second = room.RoomsNumber;
             var row = $"{first},{second}";
             csv.AppendLine(row);
             File.AppendAllText(RoomPath, csv.ToString());
@@ -309,7 +309,7 @@ public class CsvManager
         {
             var csv = new StringBuilder();
             var first = room.Id;
-            var second = room.Number;
+            var second = room.RoomsNumber;
             var row = $"{first},{second}";
             csv.AppendLine(row);
             File.AppendAllText(RoomPath, csv.ToString());
@@ -334,7 +334,10 @@ public class CsvManager
 
             var line = lines[i];
             var columns = line.Split(",");
-            var room = new Room(int.Parse(columns[1]));
+            var room = new Room()
+            {
+                RoomsNumber = int.Parse(columns[0])
+            };
             rooms.Add(room);
         }
 

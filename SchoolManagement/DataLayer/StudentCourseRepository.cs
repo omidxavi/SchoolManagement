@@ -8,6 +8,7 @@ public class StudentCourseRepository
     private const string ConnectionString =
         "Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=d:/db/SchoolManager.accdb";
 
+    public bool IsStudent
     public List<StudentCourse> GetStudentCourses()
     {
         using var connection = new OdbcConnection(ConnectionString);

@@ -11,7 +11,7 @@ public class RoomRepository
     public List<Room> GetRooms()
     {
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Query<Room>("select Id,Number from Room").ToList();
+        var result = connection.Query<Room>("select Id,RoomsNumber from Room").ToList();
 
         return result;
     }
@@ -20,13 +20,13 @@ public class RoomRepository
     {
         //insert into Teacher (Name) values('Omid')
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Execute($"insert into Room (Number) values({room.Number})");
+        var result = connection.Execute($"insert into Room (RoomsNumber) values({room.RoomsNumber})");
     }
 
     public void UpdateRooms(Room room)
     {
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Execute($"insert into Room (Number) values ({room.Number})  where Id==({room.Id})");
+        var result = connection.Execute($"insert into Room (RoomsNumber) values ({room.RoomsNumber})  where Id==({room.Id})");
     }
 
     public void DeleteRooms(Room room)

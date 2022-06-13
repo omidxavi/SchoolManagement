@@ -20,7 +20,7 @@ public class CourseRepository
     {
         //insert into Teacher (Name) values('Omid')
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Execute($"insert into Course (Name) values({course.Name})");
+        var result = connection.Execute($"insert into Course (Name) values('{course.Name}')");
     }
 
     public void UpdateCourses(Course course)
@@ -32,6 +32,6 @@ public class CourseRepository
     public void DeleteCourses(Course course)
     {
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Execute($"delete from Course where Id=({course.Id})");
+        var result = connection.Execute($"delete from Course where id in (select top 1 id from Course order by id desc )");
     }
 }

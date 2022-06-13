@@ -13,8 +13,26 @@ public class StudentCourseManager
             StudentId = selectedStudent.Id,
             CourseId = selectedCourse.Id
         };
-        
         var studentCourseRepository = new StudentCourseRepository();
-        studentCourseRepository.AddStudentCourses(studentCourse);
+
+        try
+        {
+            var isExist= studentCourseRepository.GetStudentCourses().Exists(x => x.StudentId==selectedStudent.Id && );
+
+            if (!isExist)
+            {
+                roomRepository.AddRooms(room);
+                Console.WriteLine("your course added...");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+
+    }        
+ 
+
     }
-}
+studentCourseRepository.AddStudentCourses(studentCourse);

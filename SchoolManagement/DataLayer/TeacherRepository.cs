@@ -19,7 +19,7 @@ public class TeacherRepository
     {
         //insert into Teacher (Name) values('Omid')
         using var connection = new OdbcConnection(ConnectionString);
-        var result=connection.Execute($"insert into Teacher (Name,Family) values({teacher.Name},{teacher.Family})");
+        var result=connection.Execute($"insert into Teacher (Name,Family) values('{teacher.Name}','{teacher.Family}')");
     }
 
     public void UpdateTeacher(Teacher teacher)

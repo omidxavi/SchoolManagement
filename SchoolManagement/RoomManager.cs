@@ -16,18 +16,35 @@ public class RoomManager
     {
         Console.WriteLine("please Enter your room number");
         var number = int.Parse(Console.ReadLine());
-        var room = new Room(number: number);
+        var room = new Room()
+        {
+            RoomsNumber = number
+        };
         Print(room);
         AddToList(room);
         var roomRepository = new RoomRepository();
-        roomRepository.AddRooms(room);
+        try
+        {
+            var isExist = roomRepository.GetRooms().Exists(x => x.RoomsNumber == number);
+
+            if (!isExist)
+            {
+                roomRepository.AddRooms(room);
+                Console.WriteLine("your course added...");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
         return room;
     }
     
     
     private void Print(Room room)
     {
-        Console.WriteLine($"{room.Id} : {room.Number } ");
+        Console.WriteLine($"{room.Id} : {room.RoomsNumber } ");
     }
     
     public void AddToList(Room room)
@@ -52,7 +69,7 @@ public class RoomManager
         for (int i = 0; i < _rooms.Count; i++)
         {
             var room = _rooms[i];
-            Console.WriteLine($"{i+1} -> {room.Id} , {room.Number}");
+            Console.WriteLine($"{i+1} -> {room.Id} , {room.RoomsNumber}");
 
         }
 

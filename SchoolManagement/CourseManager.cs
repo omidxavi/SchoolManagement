@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Text;
 using SchoolManagement.DataLayer;
@@ -9,23 +10,46 @@ public class CourseManager
 {
 
     private readonly List<Course> _courses;
+
+    public CourseManager()
+    {
+         _courses = new List<Course>();
+    }
     
     private const string CoursePath = "D:\\db\\Courses.csv";
     
     
     public Course DefineNewCourse()
     {
+        var courseRepository = new CourseRepository();
+
         Console.WriteLine("Enter course name");
         var name = Console.ReadLine();
 
-        var course = new Course
-        {
-            Name = name,
-        };
+        Course course = new Course();
+        course.Name = name;
+       
         Print(course);
         AddToList(course);
-        var courseRepository = new CourseRepository();
-        courseRepository.AddCourses(course);
+        
+        try
+        {
+            var isExist = courseRepository.GetCourses().Exists(x => x.Name == name);
+
+            if (!isExist)
+            {
+                courseRepository.AddCourses(course);
+                Console.WriteLine("your course added...");
+            }
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+
+        
         return course;
     }
 
