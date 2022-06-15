@@ -17,13 +17,13 @@ public class StudentCourseManager
 
         try
         {
-            var isExist= studentCourseRepository.GetStudentCourses().Exists(x => x.StudentId==selectedStudent.Id && );
+            /*var isExist= studentCourseRepository.GetStudentCourses().Exists(x => x.StudentId==selectedStudent.Id && );
 
             if (!isExist)
             {
-                roomRepository.AddRooms(room);
+                // roomRepository.AddRooms(room);
                 Console.WriteLine("your course added...");
-            }
+            }*/
         }
         catch (Exception e)
         {
@@ -35,4 +35,4 @@ public class StudentCourseManager
  
 
     }
-studentCourseRepository.AddStudentCourses(studentCourse);
+//studentCourseRepository.AddStudentCourses(studentCourse);

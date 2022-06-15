@@ -26,7 +26,7 @@ public class CourseRepository
     public void UpdateCourses(Course course)
     {
         using var connection = new OdbcConnection(ConnectionString);
-        connection.Execute($"insert into Course (Name,TeacherId) values ({course.Name},{course.TeacherId})");
+        connection.Execute($"insert into Course (Name,TeacherId) values ('{course.Name}',{course.TeacherId})");
     }
 
     public void DeleteCourses(Course course)

@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement", "SchoolManagement\SchoolManagement.csproj", "{199B59E8-FB8E-4468-AB27-2B9653674499}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement.Test", "SchoolManagement.Test\SchoolManagement.Test.csproj", "{7DE90683-4A4C-4ADA-AB47-2666958644E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{199B59E8-FB8E-4468-AB27-2B9653674499}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{199B59E8-FB8E-4468-AB27-2B9653674499}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{199B59E8-FB8E-4468-AB27-2B9653674499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE90683-4A4C-4ADA-AB47-2666958644E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE90683-4A4C-4ADA-AB47-2666958644E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE90683-4A4C-4ADA-AB47-2666958644E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE90683-4A4C-4ADA-AB47-2666958644E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

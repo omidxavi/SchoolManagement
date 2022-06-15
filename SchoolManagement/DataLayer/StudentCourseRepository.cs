@@ -8,7 +8,24 @@ public class StudentCourseRepository
     private const string ConnectionString =
         "Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=d:/db/SchoolManager.accdb";
 
-    public bool IsStudent
+    public void SetStudentCourse(int studentId, int courseId)
+    {
+        var isCourseAssignedToStudent = IsCourseAssignedToStudent(studentId, courseId);
+        if (isCourseAssignedToStudent) return;
+        
+        using var connection = new OdbcConnection(ConnectionString);
+        connection.Execute($"insert into StudentCourse (StudentId,CourseId) values({studentId},{courseId})");
+    }
+
+    public bool IsCourseAssignedToStudent(int studentId, int courseId)
+    {
+        using var connection = new OdbcConnection(ConnectionString);
+        var result = connection.QueryFirstOrDefault<int?>($"select Id from StudentCourse where StudentId = {studentId} and CourseId={courseId}");
+        if (result != null && result > 0)
+            return true;
+        return false;
+    }
+    
     public List<StudentCourse> GetStudentCourses()
     {
         using var connection = new OdbcConnection(ConnectionString);
@@ -17,17 +34,12 @@ public class StudentCourseRepository
         return result;
     }
 
-    public void AddStudentCourses(StudentCourse studentCourse)
-    {
-        //insert into Teacher (Name) values('Omid')
-        using var connection = new OdbcConnection(ConnectionString); 
-        connection.Execute($"insert into StudentCourse (StudentId,CourseId) values({studentCourse.StudentId},{studentCourse.CourseId})");
-    }
-
     public void UpdateStudentCourses(StudentCourse studentCourse)
     {
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.Execute($"insert into StudentCourse (StudentId,CourseId) values({studentCourse.StudentId},{studentCourse.CourseId}) where Id==({studentCourse.Id})");
+        var result =
+            connection.Execute(
+                $"insert into StudentCourse (StudentId,CourseId) values({studentCourse.StudentId},{studentCourse.CourseId}) where Id==({studentCourse.Id})");
     }
 
     public void DeleteStudentCourses(StudentCourse studentCourse)

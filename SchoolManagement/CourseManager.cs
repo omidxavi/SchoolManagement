@@ -1,6 +1,9 @@
+using System.Configuration;
+using System.Data.Odbc;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Text;
+using Dapper;
 using SchoolManagement.DataLayer;
 
 
@@ -8,6 +11,9 @@ namespace SchoolManagement;
 
 public class CourseManager
 {
+    private const string ConnectionString =
+        "Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=d:/db/SchoolManager.accdb";
+
 
     private readonly List<Course> _courses;
 
@@ -98,6 +104,8 @@ public class CourseManager
             Name = selectedCourse.Name,
             TeacherId = selectedCourse.TeacherId
         };
+        var isExistThisCourseTeacher = IsExistThisCourseTeacher(selectedTeacher.Id);
+        if (isExistThisCourseTeacher) return;
         courseRepository.UpdateCourses(course);
 
     }
@@ -118,5 +126,15 @@ public class CourseManager
         var selectCourse = courseRepository.GetCourses()[selectedIndex - 1];
         Console.WriteLine($"You selected {selectCourse.Name}");
         return selectCourse;
+    }
+
+    public bool IsExistThisCourseTeacher(int teacherId)
+    {
+        using var connection = new OdbcConnection(ConnectionString);
+        var result = connection.QueryFirstOrDefault<int>($"select Id from Course where TeacherId={teacherId}");
+        if (result !=null && result>0)
+        
+            return true;
+        return false;
     }
 }
