@@ -104,7 +104,7 @@ public class CourseManager
             Name = selectedCourse.Name,
             TeacherId = selectedCourse.TeacherId
         };
-        var isExistThisCourseTeacher = IsExistThisCourseTeacher(selectedTeacher.Id);
+        var isExistThisCourseTeacher = IsExistThisCourseTeacher(selectedTeacher.Id,selectedCourse.Name);
         if (isExistThisCourseTeacher) return;
         courseRepository.UpdateCourses(course);
 
@@ -128,10 +128,10 @@ public class CourseManager
         return selectCourse;
     }
 
-    public bool IsExistThisCourseTeacher(int teacherId)
+    public bool IsExistThisCourseTeacher(int teacherId,string name)
     {
         using var connection = new OdbcConnection(ConnectionString);
-        var result = connection.QueryFirstOrDefault<int>($"select Id from Course where TeacherId={teacherId}");
+        var result = connection.QueryFirstOrDefault<int>($"select Id from Course where TeacherId={teacherId} and NAME ='{name}'");
         if (result !=null && result>0)
         
             return true;

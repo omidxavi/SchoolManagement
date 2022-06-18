@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8ee01cb-302e-43b1-9a36-467def8b8f9c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SchoolManagement.Test/DataLayer/StudentCourseRepositoryTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement.Test/SchoolManagement.Test.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement.sln" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentCourseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentCourseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +69,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.SchoolManagement">
+  <component name="RunManager">
     <configuration name="SchoolManagement" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -128,7 +122,9 @@
       <workItem from="1655099217242" duration="12705000" />
       <workItem from="1655115875848" duration="13039000" />
       <workItem from="1655216002901" duration="1505000" />
-      <workItem from="1655319140984" duration="3846000" />
+      <workItem from="1655319140984" duration="4166000" />
+      <workItem from="1655527972361" duration="1934000" />
+      <workItem from="1655555474886" duration="820000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654517202634</created>
@@ -228,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655132638869</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="managed relations and test">
+      <created>1655323455004</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1655323455004</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +279,8 @@
     <MESSAGE value="Handel and Managed Relations" />
     <MESSAGE value="stable version needs to handel repeat problem" />
     <MESSAGE value="manage repeat problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="manage repeat problem" />
+    <MESSAGE value="managed relations and test" />
+    <option name="LAST_COMMIT_MESSAGE" value="managed relations and test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -338,10 +342,10 @@
           <line>34</line>
           <properties documentPath="C:\Projects\MyProjects\SchoolManagement\SchoolManagement\DataLayer\CourseRepository.cs" initialLine="34" containingFunctionPresentation="method 'DeleteCourses'">
             <startOffsets>
-              <option value="1117" />
+              <option value="1114" />
             </startOffsets>
             <endOffsets>
-              <option value="1232" />
+              <option value="1229" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="24" />
