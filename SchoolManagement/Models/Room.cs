@@ -3,13 +3,12 @@ namespace SchoolManagement;
 public class Room
 {
     public int Id;
-    public int Number;
+    public int RoomsNumber;
 
-    public Room(int id ,int number)
+    /*public Room(int number)
     {
-        Id = id;
         Number = number;
-    }
+    }*/
 }
 
 

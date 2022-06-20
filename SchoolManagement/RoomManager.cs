@@ -1,40 +1,50 @@
 using System.Runtime.InteropServices;
+using SchoolManagement.DataLayer;
 
 namespace SchoolManagement;
 
 public class RoomManager
 {
     private readonly List<Room> _rooms;
-    private readonly IdGeneratorRoom _idGeneratorRoom;
 
     public RoomManager()
     {
         _rooms = new CsvManager().GetRoom();
-        _idGeneratorRoom = new IdGeneratorRoom(_rooms.Count);
     }
 
     public Room GetRoomFromUser()
     {
-        var id = _idGeneratorRoom.GenerateId();
         Console.WriteLine("please Enter your room number");
         var number = int.Parse(Console.ReadLine());
-        var room = new Room(id: id, number: number);
+        var room = new Room()
+        {
+            RoomsNumber = number
+        };
         Print(room);
         AddToList(room);
-        AddToExcel(room);
+        var roomRepository = new RoomRepository();
+        try
+        {
+            var isExist = roomRepository.GetRooms().Exists(x => x.RoomsNumber == number);
+
+            if (!isExist)
+            {
+                roomRepository.AddRooms(room);
+                Console.WriteLine("your course added...");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
         return room;
     }
     
     
     private void Print(Room room)
     {
-        Console.WriteLine($"{room.Id} : {room.Number } ");
-    }
-
-    private void AddToExcel(Room room)
-    {
-        CsvManager csvManager = new CsvManager();
-        csvManager.AddToRoomsFile(room);
+        Console.WriteLine($"{room.Id} : {room.RoomsNumber } ");
     }
     
     public void AddToList(Room room)
@@ -59,7 +69,7 @@ public class RoomManager
         for (int i = 0; i < _rooms.Count; i++)
         {
             var room = _rooms[i];
-            Console.WriteLine($"{i+1} -> {room.Id} , {room.Number}");
+            Console.WriteLine($"{i+1} -> {room.Id} , {room.RoomsNumber}");
 
         }
 

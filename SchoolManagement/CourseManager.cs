@@ -1,56 +1,71 @@
+using System.Configuration;
+using System.Data.Odbc;
+using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Text;
-
+using Dapper;
+using SchoolManagement.DataLayer;
 
 
 namespace SchoolManagement;
 
 public class CourseManager
 {
+    private const string ConnectionString =
+        "Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=d:/db/SchoolManager.accdb";
+
 
     private readonly List<Course> _courses;
-    private readonly IdGeneratorCourse idGenerator;
-
-
-    private const string CoursePath = "D:\\db\\Courses.csv";
 
     public CourseManager()
     {
-        _courses =new CsvManager().GetCourses();
-        idGenerator = new IdGeneratorCourse(_courses.Count);
+         _courses = new List<Course>();
     }
-
-
-
+    
+    private const string CoursePath = "D:\\db\\Courses.csv";
+    
+    
     public Course DefineNewCourse()
     {
-        var id = idGenerator.GenerateId();
+        var courseRepository = new CourseRepository();
+
         Console.WriteLine("Enter course name");
         var name = Console.ReadLine();
 
-        var course = new Course
-        {
-            Id = id,
-            Name = name,
-        };
-        // Print(course);
+        Course course = new Course();
+        course.Name = name;
+       
+        Print(course);
         AddToList(course);
-        AddToExcel(course);
+        
+        try
+        {
+            var isExist = courseRepository.GetCourses().Exists(x => x.Name == name);
+
+            if (!isExist)
+            {
+                courseRepository.AddCourses(course);
+                Console.WriteLine("your course added...");
+            }
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+
+        
         return course;
     }
 
-    private void AddToExcel(Course course)
-    {
-        CsvManager csvManager = new CsvManager();
-        csvManager.AddCourseToFile(course);
-    }
 
     private void Print(Course course)
     {
         Console.WriteLine($"{course.Id} : {course.Name} ");
     }
 
-    public void PrintCourses()
+    /*public void PrintCourses()
     {
         Console.WriteLine("----------------courses------------------------");
         foreach (var course in _courses)
@@ -60,7 +75,7 @@ public class CourseManager
         }
 
         Console.WriteLine("------------------------------------------------");
-    }
+    }*/
 
     public void AddToList(Course course)
     {
@@ -77,33 +92,49 @@ public class CourseManager
         var csvManager = new CsvManager();
         csvManager.UpdateCourseTeacher(selectedCourse.Id, selectedTeacher.Id);
     }
-    
-    
-    public void UpdateCourse()
-    {
-        var lines = File.ReadAllLines(CoursePath);
-        for (int i = 0; i < lines.Length; i++)
-        {
-            var line = lines[i];
-            var columns = line.Split(",");
-        }
-        
-    }
 
+    public void AssignTeachersToCourses(TeacherManager teacherManager)
+    {
+        var selectedCourse = SelectCourse();
+        var selectedTeacher = teacherManager.selectedTeacher();
+        var courseRepository = new CourseRepository();
+        selectedCourse.TeacherId = selectedTeacher.Id;
+        var course = new Course()
+        {
+            Name = selectedCourse.Name,
+            TeacherId = selectedCourse.TeacherId
+        };
+        var isExistThisCourseTeacher = IsExistThisCourseTeacher(selectedTeacher.Id,selectedCourse.Name);
+        if (isExistThisCourseTeacher) return;
+        courseRepository.UpdateCourses(course);
+
+    }
     
     public Course SelectCourse()
     {
+        var courseRepository = new CourseRepository();
+
         Console.WriteLine("Please select a course");
-        for (int i = 0; i < _courses.Count; i++)
+        for (int i = 0; i <courseRepository.GetCourses().Count ; i++)
         {
-            var course = _courses[i];
+            var course = courseRepository.GetCourses()[i];
             Console.WriteLine($"{i + 1} -> {course.Name}");
         }
 
         var input = Console.ReadLine();
         var selectedIndex = int.Parse(input);
-        var selectCourse = _courses[selectedIndex - 1];
+        var selectCourse = courseRepository.GetCourses()[selectedIndex - 1];
         Console.WriteLine($"You selected {selectCourse.Name}");
         return selectCourse;
+    }
+
+    public bool IsExistThisCourseTeacher(int teacherId,string name)
+    {
+        using var connection = new OdbcConnection(ConnectionString);
+        var result = connection.QueryFirstOrDefault<int>($"select Id from Course where TeacherId={teacherId} and NAME ='{name}'");
+        if (result !=null && result>0)
+        
+            return true;
+        return false;
     }
 }

@@ -36,7 +36,7 @@ public class CsvManager
                 continue;
             var teacher = new Teacher()
             {
-                Id = int.Parse(columns[0]),
+                //Id = int.Parse(columns[0]),
                 Name = columns[1],
                 Family = columns[2]
             };
@@ -171,7 +171,11 @@ public class CsvManager
                 continue;
             }
 
-            var student = new Student(id: Int32.Parse(columns[0]), name: columns[1], family: columns[2]);
+            var student = new Student()
+            {
+                Name = columns[0],
+                Family = columns[1]
+            };
             var courseIds = allStudentCourses.Where(sc => sc.StudentId == student.Id).Select(sc => sc.CourseId)
                 .ToList();
             var studentCourses = allCourses.Where(c => courseIds.Contains(c.Id)).ToList();
@@ -296,7 +300,7 @@ public class CsvManager
             var csv = new StringBuilder();
             csv.AppendLine("Id,Number");
             var first = room.Id;
-            var second = room.Number;
+            var second = room.RoomsNumber;
             var row = $"{first},{second}";
             csv.AppendLine(row);
             File.AppendAllText(RoomPath, csv.ToString());
@@ -305,7 +309,7 @@ public class CsvManager
         {
             var csv = new StringBuilder();
             var first = room.Id;
-            var second = room.Number;
+            var second = room.RoomsNumber;
             var row = $"{first},{second}";
             csv.AppendLine(row);
             File.AppendAllText(RoomPath, csv.ToString());
@@ -330,7 +334,10 @@ public class CsvManager
 
             var line = lines[i];
             var columns = line.Split(",");
-            var room = new Room(int.Parse(columns[0]), int.Parse(columns[1]));
+            var room = new Room()
+            {
+                RoomsNumber = int.Parse(columns[0])
+            };
             rooms.Add(room);
         }
 
@@ -384,8 +391,7 @@ public class CsvManager
 
             var line = lines[i];
             var columns = line.Split(",");
-            var roomsCalender = new RoomsCalender(int.Parse(columns[0]), int.Parse(columns[1]), int.Parse(columns[2]),
-                day: 0,0);
+            var roomsCalender = new RoomsCalender();
             // Enum changed to int but in file we have string can not read...
             roomsCalenders.Add(roomsCalender);
         }

@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Channels;
 using System.IO;
+using SchoolManagement.DataLayer;
 
 
 namespace SchoolManagement;
@@ -9,51 +10,56 @@ namespace SchoolManagement;
 public class TeacherManager
 {
     private readonly List<Teacher> _teachers;
-    private readonly IdGeneratorTeacher idGenerator;
 
     public TeacherManager()
     {
-        _teachers = new CsvManager().GetTeachers();
-        idGenerator = new IdGeneratorTeacher(_teachers.Count);
+        _teachers = new List<Teacher>();
     }
-
     
-
+    
     public Teacher DefineNewTeacher()
     {
         
-        var id = idGenerator.GenerateId();
         Console.WriteLine("Enter teacher name");
         var name = Console.ReadLine();
         Console.WriteLine("Enter teacher family");
         var family = Console.ReadLine();
         var teacher = new Teacher
         {
-            Id = id,
             Name = name,
             Family = family,
         };
         print(teacher);
         AddToList(teacher);
-        AddTOExcel(teacher);
-        
+        var teacherRepository = new TeacherRepository();
+        try
+        {
+            var isExist = teacherRepository.GetTeachers().Exists(x => x.Family == family);
+
+            if (!isExist)
+            {
+                teacherRepository.AddTeacher(teacher);
+                Console.WriteLine("your course added...");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+
         return teacher;
     }
     
 
-    private void AddTOExcel(Teacher teacher)
-    {
-        CsvManager csvManager = new CsvManager();
-        csvManager.AddTeacherTOFile(teacher);
-    }
 
  
     private void print(Teacher teacher)
     {
-        Console.WriteLine($"{teacher.Id} : {teacher.Name} + {teacher.Family}  and age is : {teacher.Age}");
+        Console.WriteLine($"{teacher.Id} : {teacher.Name} + {teacher.Family} ");
     }
 
-    public void PrintTeachers()
+    /*public void PrintTeachers()
     {
         Console.WriteLine("-----------------------Teachers------------------------");
         foreach (var teacher in _teachers )
@@ -61,26 +67,26 @@ public class TeacherManager
             print(teacher);
             Console.WriteLine("*******************************************");
         }
-    }
+    }*/
      
 
     public void AddToList(Teacher teacher)
     {
         _teachers.Add(teacher);
-        
     }
     public Teacher selectedTeacher()
     {
         Console.WriteLine("please select a teacher");
-        for (int i = 0; i < _teachers.Count; i++)
+        var teacherRepository = new TeacherRepository();
+        for (int i = 0; i <teacherRepository.GetTeachers().Count ; i++)
         {
-            var teacher = _teachers[i];
+            var teacher = teacherRepository.GetTeachers()[i];
             Console.WriteLine($"{i+1} -> {teacher.Name} , {teacher.Family}");
         }
 
         var input = Console.ReadLine();
         var selectedIndex = int.Parse(input);
-        var selectedTeacher = _teachers[selectedIndex - 1];
+        var selectedTeacher = teacherRepository.GetTeachers()[selectedIndex - 1];
         Console.WriteLine($"you selected {selectedTeacher.Name},{selectedTeacher.Family}");
         return selectedTeacher;
     }
