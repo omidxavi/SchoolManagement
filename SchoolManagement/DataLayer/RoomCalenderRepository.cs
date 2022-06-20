@@ -34,4 +34,24 @@ public class RoomsCalenderRepository
         using var connection = new OdbcConnection(ConnectionString);
         var result = connection.Execute($"delete from RoomsCalender where Id==({roomsCalender.Id})");
     }
+    
+    public bool CheckRoomCalender(int roomId,int day,int time)
+    {
+        using var connection = new OdbcConnection(ConnectionString);
+        var result = connection.QueryFirstOrDefault<int?>($"select Id from RoomsCalender where RoomId = {roomId}  and  ClassDay={day} and ClassTime={time}");
+        if (result != null && result > 0) 
+            return true;
+        return false;
+    }
+    public void SetRoomCalender(int roomId,int courseId,int day,int time)
+    {
+        var checkRoomCalender = CheckRoomCalender(roomId, day, time);
+        if (checkRoomCalender)
+        {
+            Console.WriteLine("This Class Has Been Reserved Before,Please Try Again");
+            return;
+        }
+        using var connection = new OdbcConnection(ConnectionString);
+        connection.Execute($"insert into RoomsCalender (RoomId,CourseId,ClassDay,ClassTime) values({roomId},{courseId},{day},{time})");
+    } 
 }
