@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8ee01cb-302e-43b1-9a36-467def8b8f9c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/SchoolManagement.Test/DataLayer/RoomCalenderManagerTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,12 +65,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="XThreadsFramesViewSplitterKey" value="0.7132353" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Project.SchoolManagement">
     <configuration name="SchoolManagement" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -124,7 +124,9 @@
       <workItem from="1655216002901" duration="1505000" />
       <workItem from="1655319140984" duration="4166000" />
       <workItem from="1655527972361" duration="1934000" />
-      <workItem from="1655555474886" duration="820000" />
+      <workItem from="1655555474886" duration="877000" />
+      <workItem from="1655638416792" duration="1358000" />
+      <workItem from="1655700100416" duration="11062000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1654517202634</created>
@@ -231,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655323455004</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Course Repeat Problwm solved">
+      <created>1655556345019</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1655556345019</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +289,8 @@
     <MESSAGE value="stable version needs to handel repeat problem" />
     <MESSAGE value="manage repeat problem" />
     <MESSAGE value="managed relations and test" />
-    <option name="LAST_COMMIT_MESSAGE" value="managed relations and test" />
+    <MESSAGE value="Course Repeat Problwm solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="Course Repeat Problwm solved" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
