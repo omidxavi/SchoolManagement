@@ -13,8 +13,7 @@ public class CourseManager
 {
     private const string ConnectionString =
         "Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=d:/db/SchoolManager.accdb";
-
-
+    
     private readonly List<Course> _courses;
 
     public CourseManager()
