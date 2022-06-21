@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0635db62-ffe2-4878-97bb-ea7c7bb0292e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/projectSettingsUpdater.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/IRoomsCalenderRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/Postgres/PostgresRoomsCalenderRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement.Test/DataLayer/RoomCalenderManagerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement.Test/DataLayer/RoomsCalenderRepositoryTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomCalenderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomCalenderRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement.Test/DataLayer/RoomsCalenderRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement.Test/DataLayer/RoomsCalenderRepositoryTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomCalenderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/MsAccess/MsAccessRoomsCalenderRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomsCalender.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/RoomManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/SchoolManagement.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/SchoolManagement.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +36,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/32e4e74128fcb0b6549a919f416d3242ec214218e666652c3836dcc2f025a6/DbConnectionInternal.Shared.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fd24584d19b30e71661e6cf1e2b72e725ac87c09096b9fcbf5f344bff357d/DefaultInterpolatedStringHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b2e3e178a1591bb348271b37e448612623076d97a8f107ac17519732f7a746a/NpgsqlCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3c9fcf3545eeb2ff2cba80c87da4cb5bea1b7831bfa68e51e6d585b8a6688cf/Contains.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7a1ad32abaee44480b66c2c1fcee9628cca92a4cd272eced5781564201180/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ad457575d35dcbff26c9a5e3fb1d92f1d3c55f25ef6ebf475367b5d8/List.cs" root0="SKIP_HIGHLIGHTING" />
@@ -92,6 +95,8 @@
       <workItem from="1655718981462" duration="127000" />
       <workItem from="1655719156547" duration="1676000" />
       <workItem from="1655721238069" duration="452000" />
+      <workItem from="1655786912443" duration="13279000" />
+      <workItem from="1655814050476" duration="2870000" />
     </task>
     <servers />
   </component>
@@ -116,6 +121,23 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SchoolManagement/DataLayer/MsAccess/MsAccessRoomsCalenderRepository.cs</url>
+          <line>48</line>
+          <properties documentPath="C:\Projects\MyProjects\SchoolManagement\SchoolManagement\DataLayer\RoomCalenderRepository.cs" initialLine="48" containingFunctionPresentation="method 'CheckStudentConflictInDays'">
+            <startOffsets>
+              <option value="2087" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2147" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#SchoolManagement.Student" memberName="Id" />

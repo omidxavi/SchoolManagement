@@ -13,8 +13,4 @@
       <PackageReference Include="System.Data.OleDb" Version="7.0.0-preview.4.22229.4" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="DataLayer" />
-    </ItemGroup>
-
 </Project>

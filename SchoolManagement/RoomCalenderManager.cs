@@ -34,8 +34,8 @@ public class RoomCalenderManager
         };
         Print(roomsCalender);
         AddToList(roomsCalender);
-        var roomCalenderRepository = new RoomsCalenderRepository();
-        roomCalenderRepository.SetRoomCalender(roomId, courseId, day, time);
+        IRoomsCalenderRepository roomsCalenderRepository = new PostgresRoomsCalenderRepository();
+        roomsCalenderRepository.SetRoomCalender(roomId, courseId, day, time);
         return roomsCalender;
 
     }

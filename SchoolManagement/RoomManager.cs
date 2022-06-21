@@ -9,7 +9,8 @@ public class RoomManager
 
     public RoomManager()
     {
-        _rooms = new CsvManager().GetRoom();
+        var roomRepository = new RoomRepository();
+        _rooms = roomRepository.GetRooms();
     }
 
     public Room GetRoomFromUser()
