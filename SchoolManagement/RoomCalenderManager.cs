@@ -9,9 +9,11 @@ public class RoomCalenderManager
 
 {
     private readonly List<RoomsCalender> _roomsCalender;
-    public RoomCalenderManager()
+    private readonly IRoomsCalenderRepository _roomsCalenderRepository;
+    public RoomCalenderManager(IRoomsCalenderRepository roomsCalenderRepository)
     {
-        _roomsCalender = new CsvManager().GetRoomsCalender(); 
+        _roomsCalender = new CsvManager().GetRoomsCalender();
+        _roomsCalenderRepository = roomsCalenderRepository;
     }
     private const string ConnectionString =
         "Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=d:/db/SchoolManager.accdb";
@@ -20,7 +22,7 @@ public class RoomCalenderManager
     public RoomsCalender DefineGeneralCalender(RoomManager roomManager, CourseManager courseManager)
     {
         var roomId = roomManager.SelectRoom().Id;
-        var courseId = courseManager.SelectCourse().Id;
+        int courseId = courseManager.SelectCourse().Id;
         Console.WriteLine("chose your day '0=>sat , 1=>sun , ...6=>fri' ");
         var day = int.Parse(Console.ReadLine());
         Console.WriteLine("chose your time '0=>8:10 , 1=>10:12 , 2=>13:15 , 3=>15:17' ");
@@ -34,8 +36,8 @@ public class RoomCalenderManager
         };
         Print(roomsCalender);
         AddToList(roomsCalender);
-        IRoomsCalenderRepository roomsCalenderRepository = new PostgresRoomsCalenderRepository();
-        roomsCalenderRepository.SetRoomCalender(roomId, courseId, day, time);
+        //IRoomsCalenderRepository roomsCalenderRepository = new PostgresRoomsCalenderRepository();
+        _roomsCalenderRepository.SetRoomCalender(roomId, courseId, day, time);
         return roomsCalender;
 
     }
@@ -51,7 +53,4 @@ public class RoomCalenderManager
         _roomsCalender.Add(roomsCalender);
     }
     
-    
-    
-
 }

@@ -7,9 +7,10 @@ namespace SchoolManagement;
 public class StudentManager
 {
     private readonly List<Student> _students;
-
-    public StudentManager()
+    private readonly IStudentRepository _studentRepository;
+    public StudentManager(IStudentRepository studentRepository)
     {
+        _studentRepository = studentRepository;
         _students = new List<Student>();
     }
     
@@ -27,8 +28,7 @@ public class StudentManager
 
         Print(student);
         AddToList(student);
-        var studentRepository = new StudentRepository();
-        studentRepository.AddStudents(student);
+        _studentRepository.AddStudents(student);
         return student;
     }
 
@@ -68,18 +68,18 @@ public class StudentManager
 
     public Student SelectStudent()
     {
-        var studentRepository = new StudentRepository();
+        //var studentRepository = new MsAccessStudentRepository();
 
         Console.WriteLine("select your student");
-        for (int i = 0; i <studentRepository.GetStudents().Count ; i++)
+        for (int i = 0; i <_studentRepository.GetStudents().Count ; i++)
         {
-            var student = studentRepository.GetStudents()[i];
+            var student = _studentRepository.GetStudents()[i];
             Console.WriteLine($"{i+1} =>: {student.Name} , {student.Family}");
         }
 
         var input = Console.ReadLine();
         var selectIndex = int.Parse(input);
-        var selectStudent = studentRepository.GetStudents()[selectIndex - 1];
+        var selectStudent = _studentRepository.GetStudents()[selectIndex - 1];
         Console.WriteLine($"You selected {selectStudent.Family}");
         return selectStudent;
     }

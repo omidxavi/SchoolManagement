@@ -10,9 +10,11 @@ namespace SchoolManagement;
 public class TeacherManager
 {
     private readonly List<Teacher> _teachers;
-
-    public TeacherManager()
+    private readonly ITeacherRepository _teacherRepository;
+    
+    public TeacherManager(ITeacherRepository teacherRepository)
     {
+        _teacherRepository = teacherRepository;
         _teachers = new List<Teacher>();
     }
     
@@ -31,21 +33,19 @@ public class TeacherManager
         };
         print(teacher);
         AddToList(teacher);
-        var teacherRepository = new TeacherRepository();
         try
         {
-            var isExist = teacherRepository.GetTeachers().Exists(x => x.Family == family);
+            var isExist =_teacherRepository != null && _teacherRepository.GetTeachers().Exists(x => x.Family == family);
 
             if (!isExist)
             {
-                teacherRepository.AddTeacher(teacher);
+                _teacherRepository.AddTeacher(teacher);
                 Console.WriteLine("your course added...");
             }
         }
         catch (Exception e)
         {
             Console.WriteLine(e);
-            throw;
         }
 
         return teacher;
@@ -77,16 +77,16 @@ public class TeacherManager
     public Teacher selectedTeacher()
     {
         Console.WriteLine("please select a teacher");
-        var teacherRepository = new TeacherRepository();
-        for (int i = 0; i <teacherRepository.GetTeachers().Count ; i++)
+        //var teacherRepository = new MsAccessTeacherRepository();
+        for (int i = 0; i <_teacherRepository.GetTeachers().Count ; i++)
         {
-            var teacher = teacherRepository.GetTeachers()[i];
+            var teacher = _teacherRepository.GetTeachers()[i];
             Console.WriteLine($"{i+1} -> {teacher.Name} , {teacher.Family}");
         }
 
         var input = Console.ReadLine();
         var selectedIndex = int.Parse(input);
-        var selectedTeacher = teacherRepository.GetTeachers()[selectedIndex - 1];
+        var selectedTeacher = _teacherRepository.GetTeachers()[selectedIndex - 1];
         Console.WriteLine($"you selected {selectedTeacher.Name},{selectedTeacher.Family}");
         return selectedTeacher;
     }

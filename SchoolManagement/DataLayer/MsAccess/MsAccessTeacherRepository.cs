@@ -1,9 +1,8 @@
 using System.Data.Odbc;
 using Dapper;
-
 namespace SchoolManagement.DataLayer;
 
-public class TeacherRepository
+public class MsAccessTeacherRepository : ITeacherRepository
 {
     private const string ConnectionString =
         "Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=d:/db/SchoolManager.accdb";
@@ -33,4 +32,5 @@ public class TeacherRepository
         using var connection = new OdbcConnection(ConnectionString);
         var result = connection.Execute($"delete from Teacher where Id==({teacher.Id})");
     }
+    
 }

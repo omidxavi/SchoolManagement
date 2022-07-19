@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <PackageReference Include="Dapper" Version="2.0.123" />
+      <PackageReference Include="Npgsql" Version="7.0.0-preview.5" />
       <PackageReference Include="System.Data.Odbc" Version="7.0.0-preview.4.22229.4" />
       <PackageReference Include="System.Data.OleDb" Version="7.0.0-preview.4.22229.4" />
     </ItemGroup>

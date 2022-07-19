@@ -1,10 +1,11 @@
 using System.Data.Odbc;
 using Dapper;
-
 namespace SchoolManagement.DataLayer;
 
-public class RoomRepository
+public class MsAccessRoomRepository
 {
+
+    
     private const string ConnectionString =
         "Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=d:/db/SchoolManager.accdb";
 

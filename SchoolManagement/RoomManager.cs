@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using SchoolManagement.DataLayer;
 
@@ -6,11 +8,13 @@ namespace SchoolManagement;
 public class RoomManager
 {
     private readonly List<Room> _rooms;
+    private readonly IRoomRepository _roomRepository;
 
-    public RoomManager()
+    public RoomManager(IRoomRepository roomRepository)
     {
-        var roomRepository = new RoomRepository();
-        _rooms = roomRepository.GetRooms();
+        //var roomRepository = new MsAccessRoomRepository();
+        _rooms = _roomRepository?.GetRooms();
+        _roomRepository = roomRepository;
     }
 
     public Room GetRoomFromUser()
@@ -23,21 +27,20 @@ public class RoomManager
         };
         Print(room);
         AddToList(room);
-        var roomRepository = new RoomRepository();
+        //var roomRepository = new MsAccessRoomRepository();
         try
         {
-            var isExist = roomRepository.GetRooms().Exists(x => x.RoomsNumber == number);
+            var isExist = _roomRepository.GetRooms().Exists(x => x.RoomsNumber == number);
 
             if (!isExist)
             {
-                roomRepository.AddRooms(room);
+                _roomRepository.AddRooms(room);
                 Console.WriteLine("your course added...");
             }
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            Console.WriteLine(e); 
         }
         return room;
     }
@@ -50,33 +53,35 @@ public class RoomManager
     
     public void AddToList(Room room)
     {
-        _rooms.Add(room);
+        if (_rooms != null) _rooms.Add(room);
     }
     
     public void PrintRooms()
     {
         Console.WriteLine("-------Rooms--------------------------");
-        foreach (var room in _rooms)
-        {
-            Print(room);
-            Console.WriteLine("**************************");
-        }    
+        if (_rooms != null)
+            foreach (var room in _rooms)
+            {
+                Print(room);
+                Console.WriteLine("**************************");
+            }
+
         Console.WriteLine("-----------------------------------------");
     }
     
     public Room SelectRoom()
     {
         Console.WriteLine("select your Room");
-        for (int i = 0; i < _rooms.Count; i++)
+        for (int i = 0; i < _roomRepository.GetRooms().Count; i++)
         {
-            var room = _rooms[i];
+            var room = _roomRepository.GetRooms()[i];
             Console.WriteLine($"{i+1} -> {room.Id} , {room.RoomsNumber}");
 
         }
 
         var input = Console.ReadLine();
         var selectIndex = int.Parse(input);
-        var selectRoom = _rooms[selectIndex - 1];
+        var selectRoom = _roomRepository.GetRooms()[selectIndex - 1];
         return selectRoom;
     }
 }

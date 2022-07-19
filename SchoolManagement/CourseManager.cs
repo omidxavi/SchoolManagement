@@ -1,5 +1,6 @@
 using System.Configuration;
 using System.Data.Odbc;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Text;
@@ -16,10 +17,12 @@ public class CourseManager
 
 
     private readonly List<Course> _courses;
+    private readonly ICourseRepository _courseRepository;
 
-    public CourseManager()
+    public CourseManager(ICourseRepository courseRepository)
     {
          _courses = new List<Course>();
+         _courseRepository = courseRepository;
     }
     
     private const string CoursePath = "D:\\db\\Courses.csv";
@@ -27,7 +30,8 @@ public class CourseManager
     
     public Course DefineNewCourse()
     {
-        var courseRepository = new CourseRepository();
+        var courseRepository = new MsAccessCourseRepository();
+        var courseRepositoryPostgres = new PostgresCourseRepository();
 
         Console.WriteLine("Enter course name");
         var name = Console.ReadLine();
@@ -39,14 +43,17 @@ public class CourseManager
         AddToList(course);
         
         try
-        {
-            var isExist = courseRepository.GetCourses().Exists(x => x.Name == name);
+        { 
+            bool isExist = courseRepository.GetCourses().Exists(x => x.Name == name);
 
             if (!isExist)
             {
                 courseRepository.AddCourses(course);
                 Console.WriteLine("your course added...");
+                courseRepositoryPostgres.AddCourses(course);
             }
+
+            Console.WriteLine("you have this course");
 
         }
         catch (Exception e)
@@ -54,6 +61,7 @@ public class CourseManager
             Console.WriteLine(e);
             throw;
         }
+        
 
         
         return course;
@@ -97,7 +105,8 @@ public class CourseManager
     {
         var selectedCourse = SelectCourse();
         var selectedTeacher = teacherManager.selectedTeacher();
-        var courseRepository = new CourseRepository();
+        //var courseRepository = new MsAccessCourseRepository();
+        //var courseRepositoryPostgres = new PostgresCourseRepository();
         selectedCourse.TeacherId = selectedTeacher.Id;
         var course = new Course()
         {
@@ -106,24 +115,30 @@ public class CourseManager
         };
         var isExistThisCourseTeacher = IsExistThisCourseTeacher(selectedTeacher.Id,selectedCourse.Name);
         if (isExistThisCourseTeacher) return;
-        courseRepository.UpdateCourses(course);
-
+        _courseRepository.UpdateCourses(course);
+        //_courseRepository.UpdateCourses(course);
     }
     
     public Course SelectCourse()
     {
-        var courseRepository = new CourseRepository();
+        //var courseRepository = new MsAccessCourseRepository();
 
         Console.WriteLine("Please select a course");
-        for (int i = 0; i <courseRepository.GetCourses().Count ; i++)
-        {
-            var course = courseRepository.GetCourses()[i];
-            Console.WriteLine($"{i + 1} -> {course.Name}");
-        }
+        var result = _courseRepository.GetCourses();
+        Console.WriteLine(result);
+
+        if (result!= null)
+            for (int i = 0; i < result.Count; i++)
+            {
+                var course = _courseRepository.GetCourses()[i];
+                Console.WriteLine($"{i + 1} -> {course.Name}");
+            }
+        
+        
 
         var input = Console.ReadLine();
         var selectedIndex = int.Parse(input);
-        var selectCourse = courseRepository.GetCourses()[selectedIndex - 1];
+        var selectCourse = _courseRepository.GetCourses()[selectedIndex - 1];
         Console.WriteLine($"You selected {selectCourse.Name}");
         return selectCourse;
     }

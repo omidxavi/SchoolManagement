@@ -2,17 +2,22 @@
 
 using System.Text;
 using SchoolManagement;
+using SchoolManagement.DataLayer;
+
 //using SchoolManagement.DataLayer;
-
+ITeacherRepository teacherRepository = new PostgresTeacherRepository();
+ICourseRepository courseRepository = new PostgresCourseRepository();
+IStudentRepository studentRepository = new PostgresStudentRepository(); 
+IRoomRepository roomRepository = new PostgresRoomRepository();
+IRoomsCalenderRepository roomsCalenderRepository = new PostgresRoomsCalenderRepository();
+IStudentCourseRepository studentCourseRepository = new PostgresStudentCourseRepository();
 //var teachers = new TeacherRepository().GetTeachers();
-var teacherManager = new TeacherManager();
-var courseManager = new CourseManager();
-var studentManager = new StudentManager();
-var roomManager = new RoomManager();
-var roomCalenderManager = new RoomCalenderManager();
-var studentCourseManager = new StudentCourseManager();
-
-
+var teacherManager = new TeacherManager(teacherRepository);
+var courseManager = new CourseManager(courseRepository);
+var studentManager = new StudentManager(studentRepository);
+var roomManager = new RoomManager(roomRepository);
+var roomCalenderManager = new RoomCalenderManager(roomsCalenderRepository);
+var studentCourseManager = new StudentCourseManager(studentCourseRepository);
 
 var stop = false;
 
