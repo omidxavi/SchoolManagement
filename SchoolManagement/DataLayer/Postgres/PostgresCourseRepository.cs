@@ -44,6 +44,7 @@ public class PostgresCourseRepository : ICourseRepository
         using var cmd = new NpgsqlCommand();
         cmd.Connection = con;
         cmd.CommandText=$"UPDATE  course SET name='{course.Name}',teacher_id={course.TeacherId}  where name='{course.Name}'";
+        cmd.ExecuteNonQuery();
         con.Close();
     }
     public void DeleteCourses(Course course)

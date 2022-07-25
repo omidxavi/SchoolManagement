@@ -5,33 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0635db62-ffe2-4878-97bb-ea7c7bb0292e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/MsAccess/MsAccessCourseRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/MsAccess/MsAccessRoomRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/MsAccess/MsAccessStudentCourseRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/MsAccess/MsAccessStudentRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/MsAccess/MsAccessTeacherRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/Postgres/PostgresCourseRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/Postgres/PostgresRoomRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/Postgres/PostgresStudentCourseRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/Postgres/PostgresStudentRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/Postgres/PostgresTeacherRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolManagement/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement.Test/DataLayer/StudentCourseRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement.Test/DataLayer/StudentCourseRepositoryTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement.Test/SchoolManagement.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement.Test/SchoolManagement.Test.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/CourseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/CourseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/ICourseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/Postgres/PostgresRoomsCalenderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/Postgres/PostgresRoomsCalenderRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/RoomRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/IRoomRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentCourseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/IStudentCourseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/StudentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/IStudentRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/DataLayer/TeacherRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/DataLayer/ITeacherRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/RoomCalenderManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/RoomManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/SchoolManagement.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/SchoolManagement.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/StudentCourseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/StudentManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/StudentManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolManagement/TeacherManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolManagement/TeacherManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +124,8 @@
       <workItem from="1658206558885" duration="1496000" />
       <workItem from="1658213968247" duration="10431000" />
       <workItem from="1658229295194" duration="2536000" />
-      <workItem from="1658231911050" duration="1788000" />
+      <workItem from="1658231911050" duration="3924000" />
+      <workItem from="1658644660539" duration="262000" />
     </task>
     <task id="LOCAL-00001" summary="interface Define">
       <created>1655825743497</created>
@@ -159,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655825743497</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed interface and debug this version work with postgres properly without any error.">
+      <created>1658234031125</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1658234031125</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +164,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="interface Define" />
-    <option name="LAST_COMMIT_MESSAGE" value="interface Define" />
+    <MESSAGE value="fixed interface and debug this version work with postgres properly without any error." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed interface and debug this version work with postgres properly without any error." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
